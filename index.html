@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Buying Tips: Get a Good Deal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        :root {
+          --dartmouth-green: #00693e;
+          --forest-green: #228B22;
+          --off-white: #f8f8f8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--off-white);
+            padding: 20px;
+            color: #363636;
+        }
+        .container {
+            max-width: 700px; /* Adjusted to match index.html's form-card */
+            margin: 20px auto;
+            background-color: white; /* This background applies to the main content container */
+            padding: 20px; /* Adjusted padding */
+            box-shadow: none; /* Shadow removed */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .hero.is-primary.is-bold {
+          background-color: var(--dartmouth-green);
+          background-image: none; /* Ensure no default Bulma gradient */
+          box-shadow: none; /* Shadow removed */
+          margin-bottom: 20px;
+          border-radius: 10px 10px 0 0; /* Rounded top corners */
+        }
+
+        .hero-body .container {
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center; 
+          max-width: 700px;
+          margin: 0 auto;
+          padding: 1rem 0;
+        }
+
+       .hero .title {
+          color: white;
+          font-size: 2.5em;
+          font-weight: 600;
+          margin-left: 1.5rem;
+          margin-bottom: 0;
+          white-space: nowrap;
+       }
+
+        .banner-logo {
+          max-height: 50px;
+          width: auto;
+        }
+
+        h2.subtitle {
+            color: var(--forest-green);
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3.section-header { /* Applied to smaller sub-sections */
+            color: #363636;
+            font-size: 1.25em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+        ul {
+            margin-bottom: 1em;
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        .cta-section {
+            background-color: #e6ffe6; /* Light green */
+            border-left: 5px solid var(--forest-green); /* Forest Green */
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .feedback-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .button.is-primary {
+            background-color: var(--dartmouth-green);
+            border-color: var(--dartmouth-green);
+            color: white;
+            font-weight: bold;
+        }
+        .button.is-primary:hover {
+            background-color: #005a34;
+            border-color: #005a34;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .footer-message {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+        .field {
+            margin-bottom: 1rem;
+        }
+        .label {
+            font-weight: 600;
+            color: #363636;
+            margin-bottom: 0.5rem;
+        }
+        .control {
+            position: relative;
+        }
+        .radio {
+            margin-right: 1em;
+            cursor: pointer;
+        }
+        .textarea {
+            border-color: #dbdbdb;
+            box-shadow: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .textarea:focus {
+            border-color: var(--forest-green);
+            box-shadow: 0 0 0 0.125em rgba(34, 139, 34, 0.25);
+        }
+        .message-box.is-success {
+            background-color: #e6ffe6;
+            color: var(--forest-green);
+            border: 1px solid var(--forest-green);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .message-box.is-danger {
+            background-color: #ffe6e6;
+            color: #a30000;
+            border: 1px solid #a30000;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none !important;
+        }
+
+        /* Image Container for Centering */
+        .image-container {
+            text-align: center; /* Centers inline-block or inline elements like img */
+            margin-top: 20px;    /* Add some space above images */
+            margin-bottom: 20px; /* Add some space below images */
+        }
+
+        /* General Styling for Content Images */
+        .content-image {
+            max-width: 100%; /* Ensures image doesn't overflow its parent container */
+            height: auto;    /* Maintains aspect ratio */
+            display: block;  /* Makes it a block element so margin: auto works */
+            margin-left: auto; /* Centers the block element horizontally */
+            margin-right: auto; /* Centers the block element horizontally */
+            border-radius: 8px; /* Optional: adds slightly rounded corners */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: subtle shadow for depth */
+        }
+
+        /* Styling for smaller, potentially side-by-side images */
+        .content-image-small {
+            max-width: 48%; /* Adjust width to allow two images side-by-side with some gap */
+            height: auto;
+            display: inline-block; /* Allows images to sit next to each other */
+            vertical-align: middle; /* Aligns them nicely if heights vary slightly */
+            margin: 5px; /* Add some space around each small image */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* For containers holding multiple images you want to be side-by-side using flexbox */
+        .image-container.flex-images {
+            display: flex;
+            justify-content: center; /* Centers the group of images */
+            align-items: center; /* Aligns them vertically */
+            flex-wrap: wrap; /* Allows images to wrap to next line on small screens */
+            gap: 20px; /* Space between images */
+        }
+        
+        /* Styles for the "More on the Problems With Car Loans" section */
+        .related-articles-box {
+            background-color: #f8f8f8; /* Light gray background */
+            border: 1px solid #eee;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .related-articles-box .title-label {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: block;
+            color: #363636;
+        }
+        .related-articles-box .rel-link a {
+            color: var(--dartmouth-green);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .related-articles-box .rel-link a:hover {
+            text-decoration: underline;
+        }
+        .related-articles-box p {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        .related-articles-box p strong {
+            color: #000;
+        }
+
+        /* Styles for the final donation message */
+        .donation-message {
+            background-color: #f0f4f7; /* Light blue-gray */
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+        .donation-message .highlighted {
+            font-weight: bold;
+            color: var(--dartmouth-green);
+        }
+
+        /* Responsive adjustments for images on smaller screens */
+        @media (max-width: 768px) {
+          .hero-body .container {
+                flex-direction: column;
+                align-items: center;
+          }
+          .hero .title {
+                margin-left: 0;
+                text-align: center;
+                font-size: 1.8em;
+                margin-top: 10px;
+          }
+          .banner-logo {
+                margin-bottom: 0;
+          }
+            .content-image-small {
+                max-width: 90%; /* On smaller screens, make them stack or take more width */
+                display: block;
+                margin: 10px auto; /* Center them when stacked */
+            }
+            .image-container.flex-images {
+                flex-direction: column; /* Stack images vertically on small screens */
+                gap: 10px; /* Reduce gap when stacked */
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <img src="D-Pine_Rev.png" alt="Dartmouth College Logo" class="banner-logo">
+            <h1 class="title">Enrollment Form: Car Buying Study</h1>
+          </div>
+        </div>
+    </section>
+
+    <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="message-box is-success" style="text-align: center; padding: 15px; border-radius: 8px;">
+            <p>Thanks for completing the enrollment form. <strong>[$5 payment instructions]</strong>.</p>
+            <p>And remember to share pictures of your paperwork if you do end up buying a car in the next month or so! Check out our <a href="your-uploader-link-here" target="_blank">uploader</a> if you want a preview. We will reach out in a couple of weeks to remind you.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cta-section has-text-centered">
+            <p class="is-size-6">One more thing: here are some tips for how to get a good deal on your upcoming car purchase and loan. Feel free to bookmark this page or <a href="Treatment content.pdf" download="Car_Buying_Tips.pdf">download a PDF of these tips</a>.</p>
+        </div>
+
+        <h2 class="subtitle">Review Your Credit Report and Credit Score</h2>
+        <p>Typically, a higher credit score means you’ll get a lower interest rate. The opposite is true for those with lower credit scores. That’s because a good score, which is based on a history of paying bills and debts, indicates to lenders that you are more likely to pay bills on time and in full.&nbsp;But a study Consumer Reports conducted a few years ago found that even people with <a href="https://www.consumerreports.org/credit-scores-reports/consumers-found-errors-in-their-credit-reports-a6996937910/">good credit scores</a> can sometimes pay too much for auto loans. </p>
+    
+        <div class="related-articles-box">
+            <div class="title-label">More on the Problems With Car Loans</div>
+            <div class="rel-link">
+                <a href="https://www.consumerreports.org/money/car-financing/how-to-finance-a-used-car-a7337825677/" class="crux-article__bold-link crux-article__bold-link--small">How to Finance a Used Car</a>
+            </div>
+            <div class="rel-link">
+                <a href="https://www.consumerreports.org/money/car-financing/dont-rush-into-an-84-month-car-loan-a9535693332/" class="crux-article__bold-link crux-article__bold-link--small">Don't Rush Into an 84-Month Car Loan</a>
+            </div>
+            <div class="rel-link">
+                <a href="https://www.consumerreports.org/money/car-financing/how-to-get-the-best-car-loan-rate-despite-a-low-credit-score-a3496751563/" class="crux-article__bold-link crux-article__bold-link--small">How to Get the Best Car-Loan Rate Despite a Low Credit Score</a>
+            </div>
+            <div class="rel-link">
+                <a href="https://www.consumerreports.org/money/car-financing/consumer-friendly-future-for-auto-lending-a5866309476/" class="crux-article__bold-link crux-article__bold-link--small">What a Consumer-Friendly Future for Car Loans Might Look Like</a>
+            </div>
+            <p><strong>Bottom line:</strong> You don’t want surprises. Check your credit report and credit score a few months before you start shopping for a car so that you know where you stand when you start looking for a loan, says Jordan Takeyama, public relations manager at Experian, the credit reporting agency. Experian.com and many banks and credit card companies provide free credit scores. To get a free credit report—which includes the financial information your score is based on—go to <a rel="noreferrer noopener" href="https://www.annualcreditreport.com/index.action" target="_blank">AnnualCreditReport.com</a>.</p>
+        </div>
+    
+        <h2 class="subtitle">Improve Your Score</h2>
+        <p>This is especially important if you’ve had credit problems in the past. Sometimes improving a low score is as simple as <a href="https://www.consumerreports.org/credit-scores-reports/how-to-fix-your-credit-score/">correcting mistakes or discrepancies in your credit report</a>. Most corrections and disputes are completed in 10 to 14 days, Takeyama says, and credit reporting agencies generally must complete their investigations within 30 days. Paying down existing debt and late bills can also give you a last-minute bump. As always, pay bills for credit cards, utilities, and other goods promptly to avoid late fees and further damage to your credit score.</p>
+    
+        <h2 class="subtitle">Set a Budget and Stick to It</h2>
+        <p>As the staffers who buy CR’s test cars know, car dealers can be masters of the upsell. <a href="https://www.consumerreports.org/cars/car-buying-and-pricing/">Consider your needs today and how they may evolve</a> over the ownership period. Resist the urge to indulge in extras or buy a bigger or fancier vehicle than you need because you’re likely to be paying on that depreciating asset for years to come—through a loan, car insurance, and potentially local vehicle taxes.</p>
+    
+        <h2 class="subtitle">Don't Focus on Just the Monthly Cost</h2>
+        <p>Dealers often try to sell you on a loan by emphasizing what you will have to pay each month. That does matter for household budgeting purposes, but to get low monthly payments you’ll most likely have to extend the loan over a longer period of time, which will increase its overall cost.<strong> </strong>Another downside to a long-term loan is that it increases the chance that <a href="https://www.consumerreports.org/car-financing/dont-rush-into-an-84-month-auto-loan/">you will end up “underwater” or “upside down”</a> on your loan, which is when you owe more on the car than what it’s worth. Of course, a monthly cost that you can handle is important, too, so consider both factors when choosing a loan.</p>
+        <p>The example below is based on the average new-car loan amount and interest rate in the last quarter of 2023, rounded down. </p>
+        
+        <div class="image-container">
+            <img class="content-image" src="images/carLoanGraphic_2024.png" alt="Car Loan Graphic demonstrating monthly cost vs. total cost over loan terms">
+        </div>
+    
+        <h2 class="subtitle">Make the Biggest Down Payment You Can</h2>
+        <p>That shortens the time you’ll be paying interest on the loan, says Alain Nana-Sinkam, co-founder of Remarkit Automotive, a firm that analyzes market trends. Putting down more money up front also means you’ll be paying interest on a smaller amount of money, costing you less overall. “With interest rates trending higher, CR recommends that buyers make a down payment of at least 15 percent when buying a vehicle, and 20 to 25 percent if you can afford it,” says Chuck Bell, programs director for advocacy at Consumer Reports.</p>
+    
+        <h2 class="subtitle">Get Preapproval From Your Bank</h2>
+        <p>Before you set foot in a dealership—either physically or virtually—<a href="https://www.consumerreports.org/buying-a-car/when-to-buy-a-used-car-a6584238157/">contact your bank or credit union</a> and get preapproved for a loan. The dealer may be able to offer a better deal on financing, but having a loan secured ahead of time gives you a strong starting point for negotiations over financing.</p>
+    
+        <h2 class="subtitle">If Your Credit Isn't Great, Check Carmakers for Special Deals</h2>
+        <p>Sometimes automakers or their dealers will offer special financing for <a href="https://www.consumerreports.org/predatory-lending/subprime-auto-lender-required-to-repay-victims-of-bad-loans-a8206877145/">subprime borrowers</a>, although it is usually focused on entry-level models. Nana-Sinkam points out that while buying a used car will likely decrease the amount of your loan, some subprime lenders may favor new-car loans because the cars have robust warranties, making it less likely that mechanical problems will make it more difficult for the borrower to pay on time. Bell says that like anyone else, subprime borrowers should shop around. “Oftentimes, the best rate is going to come from a credit union, bank, or third-party lender, rather than from dealer-based financing,” he says. “Know what the prevailing interest rates are for borrowers in your credit score range, and seek multiple offers before heading to the dealership.”</p>
+    
+        <h2 class="subtitle">Consider Buying a Used Car</h2>
+        <p>CR members report higher levels of satisfaction with newer used cars, but you can save money by <a href="https://www.consumerreports.org/used-cars/how-to-buy-a-used-car/">buying an older model</a>. Although interest rates tend to be higher on loans for used cars, lowering the amount you’re borrowing can result in significant savings. But beware: Interest rates can be significantly higher at some used-car lots, especially so-called “buy here, pay here” dealerships, according to <a href="https://www.consumerreports.org/money/car-financing/higher-interest-loans-used-car-lots-buy-here-pay-here-a5474001396/">research from the Consumer Financial Protection Bureau</a>. </p>
+    
+        <div style="margin-top: 30px; margin-bottom: 20px; text-align: center;">
+            <h2 class="subtitle" style="margin-top:0;">Stop Overcharging for Car Loans!</h2>
+            <p><b>Sign CR’s <a href="https://action.consumerreports.org/20211028_cars">petition to the Consumer Financial Protection Bureau</a> to ensure that auto loans are fairly priced. </b></p>
+        </div>
+    
+        <h2 class="subtitle">Report Suspected Discrimination</h2>
+        <p>Black and Hispanic borrowers with the same creditworthiness as white ones pay almost 1 percentage point more interest on car loans, <a rel="noreferrer noopener" href="https://files.consumerfinance.gov/f/documents/cfpb_mayer_racial-discrimination-in-the-auto-loan-market.pdf" target="_blank">according to a 2021 study</a>. The study also found that borrowers of color were slightly more likely to be denied a loan outright. If you suspect discriminatory lending, file a complaint with the Consumer Financial Protection Bureau or with the Federal Trade Commission.</p>
+                        
+        <div class="donation-message">
+            <p>For 85 years, we have been fighting to make sure you get a fair deal and safe products. Our scientists, engineers, journalists, and researchers work tirelessly to bring consumers like you trusted information, so you have the answers you need. Not just so you can buy an appliance or car with confidence, but also so that you can know what’s safe for you and your family. As a nonprofit organization, we rely on the support of our members to help raise the standards of the products and services we use every day. Every donation, no matter the size, contributes to this work. <span class="highlighted">Please support Consumer Reports today — even a gift of as little as $3 will help. Thank you.</span></p>
+        </div>
+        <div class="feedback-section">
+            <p class="is-size-6 has-text-centered mb-3">Please help our study by answering two more questions:</p>
+
+            <form id="feedbackForm">
+                <input type="hidden" id="timeSpentField" name="timeSpentOnPageMs" value="0">
+                <input type="hidden" id="pageLoadTime" name="pageLoadTime" value="">
+                <input type="hidden" id="pageUnloadTime" name="pageUnloadTime" value="">
+                <input type="hidden" id="submissionTimestamp" name="submissionTimestamp" value="">
+                <input type="hidden" id="demographicsSubmissionId" name="demographicsSubmissionId" value="">
+
+                <div class="field">
+                    <label class="label">Are these tips useful?</label>
+                    <div class="control">
+                        <label class="radio">
+                            <input type="radio" name="tipsUseful" value="Yes" required> Yes
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="tipsUseful" value="No"> No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Have you found any other useful tips? Please describe, or paste links:</label>
+                    <div class="control">
+                        <textarea class="textarea" name="otherTips" placeholder="e.g., 'I found that checking CarGurus helped me compare prices.' or paste links here."></textarea>
+                    </div>
+                </div>
+
+                <div class="field has-text-centered">
+                    <button class="button is-primary" type="submit" id="submitFeedbackBtn">Submit Feedback</button>
+                </div>
+            </form>
+            <div id="feedback-thank-you" class="message-box is-success hidden mt-3">
+                <p>Thank you for your feedback!</p>
+            </div>
+            <div id="feedback-error" class="message-box is-danger hidden mt-3">
+                <p>There was an error submitting your feedback. Please try again.</p>
+            </div>
+        </div>
+
+        <p class="footer-message">Thanks again for joining our study. We'll be in touch soon.</p>
+    </div>
+
+    <script>
+        const treatmentScriptURL = "https://script.google.com/macros/s/AKfycbz74V9JXvlPx80mveoft0ODn9gm2z-YMqUijFoPZt3vy44CpOyOTwQJy8ADkuMDIVzcjg/exec";
+
+        let pageLoadStartTime;
+
+        function setTimestamp(field) {
+            const now = new Date();
+            const timestampString = now.getFullYear() + '-' +
+                                   ('0' + (now.getMonth() + 1)).slice(-2) + '-' +
+                                   ('0' + now.getDate()).slice(-2) + ' ' +
+                                   ('0' + now.getHours()).slice(-2) + ':' +
+                                   ('0' + now.getMinutes()).slice(-2) + ':' +
+                                   ('0' + now.getSeconds()).slice(-2);
+            field.value = timestampString;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const timeSpentField = document.getElementById('timeSpentField');
+            const pageLoadTimeField = document.getElementById('pageLoadTime');
+            const submissionTimestampField = document.getElementById('submissionTimestamp');
+            const demographicsSubmissionIdField = document.getElementById('demographicsSubmissionId');
+            const feedbackForm = document.getElementById('feedbackForm');
+            const feedbackThankYou = document.getElementById('feedback-thank-you');
+            const feedbackError = document.getElementById('feedback-error');
+            const submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
+
+            pageLoadStartTime = new Date().getTime();
+            if (pageLoadTimeField) setTimestamp(pageLoadTimeField);
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const demographicsId = urlParams.get('submissionId');
+            if (demographicsId && demographicsSubmissionIdField) {
+                demographicsSubmissionIdField.value = demographicsId;
+            }
+
+            if (feedbackForm) {
+                feedbackForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    if (submitFeedbackBtn) {
+                        submitFeedbackBtn.classList.add('is-loading');
+                        submitFeedbackBtn.disabled = true;
+                    }
+
+                    if (feedbackThankYou) feedbackThankYou.classList.add('hidden');
+                    if (feedbackError) {
+                        feedbackError.classList.add('hidden');
+                        feedbackError.textContent = '';
+                    }
+
+                    const pageUnloadEndTime = new Date().getTime();
+                    const timeOnPageMs = pageUnloadEndTime - pageLoadStartTime;
+                    if (timeSpentField) timeSpentField.value = timeOnPageMs;
+                    if (submissionTimestampField) setTimestamp(submissionTimestampField);
+
+                    const formData = new FormData(feedbackForm);
+                    const params = new URLSearchParams();
+                    for (const pair of formData.entries()) {
+                        params.append(pair[0], pair[1]);
+                    }
+                    const formDataString = params.toString();
+
+                    try {
+                        const response = await fetch(treatmentScriptURL, {
+                            method: "POST",
+                            redirect: "follow",
+                            body: formDataString,
+                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        });
+
+                        if (!response.ok) {
+                            let serverMessage = 'Unknown server error.';
+                            try {
+                                const errorData = await response.json();
+                                serverMessage = errorData.message || `Server status ${response.status}.`;
+                            } catch (jsonParseError) {
+                                const rawResponse = await response.text();
+                                serverMessage = `Server status ${response.status}. Response: ${rawResponse.substring(0, 100)}...`;
+                            }
+                            throw new Error(serverMessage);
+                        }
+
+                        const data = await response.json();
+                        if (data && data.status === "success") {
+                            if (feedbackThankYou) feedbackThankYou.classList.remove("hidden");
+                            if (feedbackForm) feedbackForm.classList.add("hidden");
+                        } else {
+                            console.error('Submission failed as per server response:', data.message);
+                            if (feedbackError) {
+                                feedbackError.textContent = data.message || 'Submission failed. Server did not indicate success.';
+                                feedbackError.classList.remove("hidden");
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error submitting feedback:', error);
+                        if (feedbackError) {
+                            feedbackError.textContent = `Error: ${error.message || 'There was a network error or problem with the server. Please try again.'}`;
+                            feedbackError.classList.remove("hidden");
+                        }
+                    } finally {
+                        if (submitFeedbackBtn) {
+                            submitFeedbackBtn.classList.remove('is-loading');
+                            if (feedbackForm && !feedbackForm.classList.contains('hidden')) {
+                                submitFeedbackBtn.disabled = false;
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.warn("Feedback form element not found. Form submission will not work.");
+            }
+        });
+    </script>
+</body>
+</html>
